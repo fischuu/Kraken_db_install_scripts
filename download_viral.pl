@@ -25,9 +25,18 @@ unless (-e "assembly_summary.txt") {
 # parse the file
 open(IN, "assembly_summary.txt") || die "Unable to open file\n";
 
-# skip the titles
+# XXX: Here is still a bug, the first line is skipped in the download, so actually the breaks comes one line too late, but for now I accept this issue...
+
 while (<IN>) {
-	last;
+  chomp();
+
+	my @d = split(/\t/);
+	
+	my $first = substr($d[0],0,1);
+
+	if($first ne "#"){
+	  last;
+	}
 }
 
 # parse the data
@@ -36,7 +45,7 @@ while(<IN>) {
 
 	my @d = split(/\t/);
 
-	if ($d[11] eq "Complete Genome") {
+#	if ($d[11] eq "Complete Genome") {
 		my $ftppath = $d[19];
 
 		# get the unique assembly name
@@ -86,7 +95,7 @@ while(<IN>) {
 		# remove original
 		unlink("${aname}_genomic.fna");
 
-	}
+#	}
 }
 
 close IN;
