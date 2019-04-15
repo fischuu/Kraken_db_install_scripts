@@ -1,3 +1,6 @@
+# Differences to the forked repository
+This version of the download script, does not only download genomes that are labeld to be complete, but it download any genome that is listed in the assembly files.
+
 # Kraken_db_install_scripts
 
 Updated Kraken DB install scripts to cope with new-ish NCBI structure
@@ -26,7 +29,7 @@ Since we're manually adding a new library, the GI's will not be used, and the ac
 Then, download the genomes you want to add the your kraken database. With the
 perl scripts from this directory, you can download:
 
-* complete genomes from refseq:
+* all genomes from refseq:
     * archaeal genomes
     * bacterial genomes
     * fungal genomes
