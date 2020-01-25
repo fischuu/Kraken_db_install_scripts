@@ -1,5 +1,5 @@
 # Differences to the forked repository
-This version of the download script, does not only download genomes that are labeld to be complete, but it download any genome that is listed in the assembly files.
+This version of the download script, does not only download genomes that are labeled to be complete, but it downloads any genome that is listed in the assembly files.
 
 # Kraken_db_install_scripts
 
